@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,11 +46,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\DataSet.cs" />
+    <Compile Include="Data\DataSetBuilder.cs" />
+    <Compile Include="Data\IItem.cs" />
+    <Compile Include="Data\Review.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recommendation\RecommendationBase.cs" />
+    <Compile Include="Recommendation\RecommendationCP.cs" />
+    <Compile Include="Recommendation\RecommendationNNPredictor.cs" />
+    <Compile Include="Recommendation\RecommendationPopularity.cs" />
+    <Compile Include="Recommendation\RecommendationPredictor.cs" />
+    <Compile Include="Statistics\BaseModel.cs" />
+    <Compile Include="Statistics\Cosine.cs" />
+    <Compile Include="Statistics\OfflinePredictor.cs" />
+    <Compile Include="Statistics\OnlinePredictor.cs" />
+    <Compile Include="Statistics\Pearson.cs" />
+    <Compile Include="Statistics\Predictor.cs" />
+    <Compile Include="Statistics\RandomPredictor.cs" />
+    <Compile Include="Utils\RandomUniqeGen.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="lib\Newtonsoft.Json.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
