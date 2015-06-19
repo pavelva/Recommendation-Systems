@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="reviews-extra-small.tsv" />
     <None Include="reviews-small.tsv" />
     <None Include="users-small.tsv" />
   </ItemGroup>
