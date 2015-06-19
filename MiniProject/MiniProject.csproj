@@ -68,6 +68,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="reviews-small.tsv" />
+    <None Include="users-small.tsv" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="lib\Newtonsoft.Json.dll" />
