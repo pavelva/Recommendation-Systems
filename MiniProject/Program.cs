@@ -15,7 +15,7 @@ namespace MiniProject
 
             Console.WriteLine("Loding data files...");
             ds = DateTime.Now;
-            rs.Load("../../reviews-extra-small.json", 0.9);
+            rs.Load("../../reviews-small.json", 0.9);
             Console.WriteLine("Loding time was " + Math.Round((DateTime.Now - ds).TotalSeconds, 0));
 
             Console.WriteLine("\nTrain model...");
@@ -24,7 +24,7 @@ namespace MiniProject
             Console.WriteLine("Training model was " + Math.Round((DateTime.Now - ds).TotalSeconds, 0));
 
             List<string> lMethods = new List<string>();
-            lMethods.Add("Pearson");
+            lMethods.Add("NNPearson");
             lMethods.Add("SVD");
             List<int> lLengths = new List<int>();
             lLengths.Add(10);

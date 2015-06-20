@@ -9,8 +9,11 @@ namespace MiniProject.Data
 {
     class UserData
     {
-        private String Contry;
+        [JsonProperty(PropertyName = "country")]
+        private String Country;
+        [JsonProperty(PropertyName = "gender")]
         private String Gender;
+        [JsonProperty(PropertyName = "age")]
         private int Age;
         [JsonProperty(PropertyName = "user_id")]
         private String ID;
@@ -20,9 +23,9 @@ namespace MiniProject.Data
             Age = Int32.Parse(age);
         }
 
-        public void SetCountry(String contry)
+        public void SetCountry(String country)
         {
-            Contry = contry;
+            Country = country;
         }
 
         public void SetGender(String gender)
@@ -40,9 +43,9 @@ namespace MiniProject.Data
             return Gender;
         }
 
-        public String GetContry()
+        public String GetCountry()
         {
-            return Contry;
+            return Country;
         }
 
         public String getID()

@@ -28,35 +28,16 @@ namespace MiniProject.Data
 
             while ((json = file.ReadLine()) != null)
             {
-                json = fixPavelError(json);
-                I item;
-                try
-                {
-                    item = JsonConvert.DeserializeObject<I>(json);
-                }
-                catch
-                {
-                    Console.WriteLine("Error | Parse: {0}", json);
-                    continue;
-                }
+                I item = JsonConvert.DeserializeObject<I>(json);
                 newDataSet.AddItem(item);
             }
             return newDataSet;
         }
 
-        private static string fixPavelError(string json)
-        {
-            int s = json.IndexOf("review_id\":") + 11;
-            int e = json.Length - 2;
-            string newJSON = json.Substring(0, s) + "\"";
-            newJSON += json.Substring(s, e - s) + "\"}";
-            return newJSON;
-        }
-
         public static UserDataSet buildUserDataSet()
         {
             UserDataSet userDataSet = new UserDataSet();
-            StreamReader file = new StreamReader("users-small.json");
+            StreamReader file = new StreamReader("../../users-small.json");
             string json;
 
             while ((json = file.ReadLine()) != null)

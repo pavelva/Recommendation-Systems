@@ -22,6 +22,7 @@ namespace MiniProject.Data
         private int ItemCounter;
         private int UserCounter;
         private double RatingAverage;
+        private UserDataSet UserDS;
 
         public DataSet()
         {
@@ -272,6 +273,16 @@ namespace MiniProject.Data
         public Dictionary<T, Dictionary<M, I>> GetMatrixRating()
         {
             return RatingMatrix;
+        }
+
+        public void setUserDataSet(UserDataSet userDataSet)
+        {
+            UserDS = userDataSet;
+        }
+
+        public UserData GetUserData(String UID)
+        {
+            return UserDS.GetUserData(UID);
         }
     }
 }

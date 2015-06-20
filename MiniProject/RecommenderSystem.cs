@@ -30,13 +30,20 @@ namespace MiniProject
         }
         public void Load(string sFileName, double dTrainSetSize)
         {
+            UserDataSet userDataSet = DataSetBuilder.buildUserDataSet();
             DataSet<string, string, string, Review>[] dataSets = DataSetBuilder.buildDataSets<string, string, string, Review>(sFileName, dTrainSetSize);
             this.Train = dataSets[0];
             this.Test = dataSets[1];
             this.Validation = Train.splitDataSet(0.05);
 
+            this.Train.setUserDataSet(userDataSet);
+            this.Test.setUserDataSet(userDataSet);
+            this.Validation.setUserDataSet(userDataSet);
+
             this.Person = new Pearson<string, string, string, Review>(Train);
             this.Cosine = new Cosine<string, string, string, Review>(Train);
+
+            
 
             RecommendationAlgo.Add("Popularity", new RecommendationPopularity<string, string, string, Review>(Train));
             RecommendationAlgo.Add("CP", new RecommendationCP<string, string, string, Review>(Train));
