@@ -28,7 +28,7 @@ namespace MiniProject.Statistics
             double weight = sumMultUA / (Math.Sqrt(sumUMA) * Math.Sqrt(sumAMA));
             //ignore all the nagative weights.
             if (sumUMA == 0 || sumAMA == 0) return 0;
-            Console.WriteLine(weight);
+            //Console.WriteLine(weight);
             return (weight > 0) ? weight : 0;
             //return weight;
         }
