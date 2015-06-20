@@ -16,6 +16,8 @@ namespace MiniProject
 
         Predictor<string, string, string, Review> BaseModel;
         Predictor<string, string, string, Review> Person;
+        Predictor<string, string, string, Review> PersonD;
+        Predictor<string, string, string, Review> PersonDO;
         Predictor<string, string, string, Review> Cosine;
         Dictionary<String, RecommendationBase<string, string, string, Review>> RecommendationAlgo;
 
@@ -41,6 +43,8 @@ namespace MiniProject
             this.Validation.setUserDataSet(userDataSet);
 
             this.Person = new Pearson<string, string, string, Review>(Train);
+            this.PersonD = new PearsonD<string, string, string, Review>(Train);
+            this.PersonDO = new PearsonDO<string, string, string, Review>(Train);
             this.Cosine = new Cosine<string, string, string, Review>(Train);
 
             
@@ -49,6 +53,8 @@ namespace MiniProject
             RecommendationAlgo.Add("CP", new RecommendationCP<string, string, string, Review>(Train));
             RecommendationAlgo.Add("Cosine", new RecommendationPredictor<string, string, string, Review>(Train, Cosine));
             RecommendationAlgo.Add("Pearson", new RecommendationPredictor<string, string, string, Review>(Train, Person));
+            RecommendationAlgo.Add("PearsonD", new RecommendationPredictor<string, string, string, Review>(Train, PersonD));
+            RecommendationAlgo.Add("PearsonDo", new RecommendationPredictor<string, string, string, Review>(Train, PersonDO));
             RecommendationAlgo.Add("NNCosine", new RecommendationNNPredictor<string, string, string, Review>(Train, Cosine));
             RecommendationAlgo.Add("NNPearson", new RecommendationNNPredictor<string, string, string, Review>(Train, Person));
         }
@@ -126,3 +132,4 @@ namespace MiniProject
         }
     }
 }
+

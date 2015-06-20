@@ -65,6 +65,8 @@
     <Compile Include="Statistics\OfflinePredictor.cs" />
     <Compile Include="Statistics\OnlinePredictor.cs" />
     <Compile Include="Statistics\Pearson.cs" />
+    <Compile Include="Statistics\PearsonD.cs" />
+    <Compile Include="Statistics\PearsonDO.cs" />
     <Compile Include="Statistics\Predictor.cs" />
     <Compile Include="Statistics\RandomPredictor.cs" />
     <Compile Include="Utils\RandomUniqeGen.cs" />
