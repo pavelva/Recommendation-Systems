@@ -25,6 +25,8 @@ namespace MiniProject
 
             List<string> lMethods = new List<string>();
             lMethods.Add("Pearson");
+            lMethods.Add("PearsonD");
+            lMethods.Add("PearsonDO");
             //lMethods.Add("SVD");
             List<int> lLengths = new List<int>();
             lLengths.Add(10);

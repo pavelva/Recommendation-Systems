@@ -54,7 +54,7 @@ namespace MiniProject
             RecommendationAlgo.Add("Cosine", new RecommendationPredictor<string, string, string, Review>(Train, Cosine));
             RecommendationAlgo.Add("Pearson", new RecommendationPredictor<string, string, string, Review>(Train, Person));
             RecommendationAlgo.Add("PearsonD", new RecommendationPredictor<string, string, string, Review>(Train, PersonD));
-            RecommendationAlgo.Add("PearsonDo", new RecommendationPredictor<string, string, string, Review>(Train, PersonDO));
+            RecommendationAlgo.Add("PearsonDO", new RecommendationPredictor<string, string, string, Review>(Train, PersonDO));
             RecommendationAlgo.Add("NNCosine", new RecommendationNNPredictor<string, string, string, Review>(Train, Cosine));
             RecommendationAlgo.Add("NNPearson", new RecommendationNNPredictor<string, string, string, Review>(Train, Person));
         }

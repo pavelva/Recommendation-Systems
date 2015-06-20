@@ -14,13 +14,25 @@ namespace MiniProject.Statistics
         protected override double CalculateWeight(T activeUserID, T userID)
         {
             double itemsWeigth = base.CalculateWeight(activeUserID, userID);
-            double demoWeigths = CalculateWeigthDemo(activeUserID, userID);
-            return 0;
+            double demoWeigths = CalculateWeightDemo(activeUserID, userID);
+            return (0.5 * itemsWeigth + 0.5 * demoWeigths);
         }
 
-        private double CalculateWeigthDemo(T activeUserID, T userID)
+        protected double CalculateWeightDemo(T activeUserID, T userID)
         {
-            throw new NotImplementedException();
+            double weight = 1;
+            UserData active = TrainDataSet.GetUserData(activeUserID.ToString());
+            UserData user = TrainDataSet.GetUserData(userID.ToString());
+            if(!active.GetCountry().Equals(user.GetCountry()))
+                weight -= 0.33;
+
+            if(Math.Abs(active.GetAge() - user.GetAge()) > 5)
+                weight -= 0.33;
+
+            if (!active.GetGender().Equals(user.GetGender()))
+                weight -= 0.33;
+
+            return (weight == 0.01 ? 0 : weight);
         }
        
     }

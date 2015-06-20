@@ -1,0 +1,50 @@
+{ "user_id": "#id", "gender": "gender", "age": "age", "country": "country", "registered": "registered" }
+{ "user_id": "user_000003", "gender": "m", "age": "22", "country": "United States", "registered": "Oct 30, 2005" }
+{ "user_id": "user_000008", "gender": "m", "age": "23", "country": "Slovakia", "registered": "Sep 28, 2006" }
+{ "user_id": "user_000009", "gender": "f", "age": "19", "country": "United States", "registered": "Jan 13, 2007" }
+{ "user_id": "user_000010", "gender": "m", "age": "19", "country": "Poland", "registered": "May 4, 2006" }
+{ "user_id": "user_000011", "gender": "m", "age": "21", "country": "Finland", "registered": "Sep 8, 2005" }
+{ "user_id": "user_000012", "gender": "f", "age": "28", "country": "United States", "registered": "Mar 30, 2005" }
+{ "user_id": "user_000013", "gender": "f", "age": "25", "country": "Romania", "registered": "Sep 25, 2006" }
+{ "user_id": "user_000017", "gender": "m", "age": "22", "country": "Morocco", "registered": "Aug 27, 2007" }
+{ "user_id": "user_000019", "gender": "f", "age": "29", "country": "Mexico", "registered": "Nov 10, 2005" }
+{ "user_id": "user_000020", "gender": "f", "age": "27", "country": "Germany", "registered": "Jul 24, 2006" }
+{ "user_id": "user_000021", "gender": "m", "age": "27", "country": "Canada", "registered": "Mar 16, 2005" }
+{ "user_id": "user_000022", "gender": "m", "age": "38", "country": "United Kingdom", "registered": "May 14, 2006" }
+{ "user_id": "user_000024", "gender": "f", "age": "25", "country": "United States", "registered": "Oct 3, 2004" }
+{ "user_id": "user_000026", "gender": "m", "age": "22", "country": "Turkey", "registered": "Dec 21, 2005" }
+{ "user_id": "user_000027", "gender": "m", "age": "24", "country": "United States", "registered": "Jul 25, 2005" }
+{ "user_id": "user_000028", "gender": "m", "age": "20", "country": "United Kingdom", "registered": "Nov 19, 2005" }
+{ "user_id": "user_000032", "gender": "m", "age": "23", "country": "Italy", "registered": "Feb 28, 2005" }
+{ "user_id": "user_000033", "gender": "f", "age": "20", "country": "Poland", "registered": "Dec 23, 2005" }
+{ "user_id": "user_000034", "gender": "f", "age": "35", "country": "Brazil", "registered": "Sep 15, 2005" }
+{ "user_id": "user_000035", "gender": "m", "age": "22", "country": "Australia", "registered": "Mar 7, 2005" }
+{ "user_id": "user_000036", "gender": "f", "age": "21", "country": "Mexico", "registered": "Feb 19, 2007" }
+{ "user_id": "user_000038", "gender": "m", "age": "29", "country": "Russian Federation", "registered": "Jul 6, 2006" }
+{ "user_id": "user_000039", "gender": "m", "age": "21", "country": "United Kingdom", "registered": "Jun 4, 2006" }
+{ "user_id": "user_000040", "gender": "f", "age": "21", "country": "Germany", "registered": "Apr 21, 2006" }
+{ "user_id": "user_000041", "gender": "m", "age": "30", "country": "Sweden", "registered": "Jun 14, 2005" }
+{ "user_id": "user_000042", "gender": "f", "age": "24", "country": "United States", "registered": "Dec 29, 2005" }
+{ "user_id": "user_000043", "gender": "f", "age": "26", "country": "United States", "registered": "Mar 18, 2006" }
+{ "user_id": "user_000044", "gender": "f", "age": "21", "country": "Italy", "registered": "Feb 27, 2007" }
+{ "user_id": "user_000045", "gender": "m", "age": "29", "country": "Chile", "registered": "Jul 9, 2006" }
+{ "user_id": "user_000046", "gender": "m", "age": "24", "country": "Greece", "registered": "Apr 23, 2007" }
+{ "user_id": "user_000047", "gender": "f", "age": "19", "country": "Croatia", "registered": "Aug 26, 2006" }
+{ "user_id": "user_000048", "gender": "m", "age": "33", "country": "Italy", "registered": "Dec 29, 2006" }
+{ "user_id": "user_000050", "gender": "f", "age": "24", "country": "United Kingdom", "registered": "Feb 10, 2006" }
+{ "user_id": "user_000051", "gender": "f", "age": "25", "country": "Brazil", "registered": "Aug 10, 2006" }
+{ "user_id": "user_000052", "gender": "m", "age": "20", "country": "Russian Federation", "registered": "Oct 16, 2006" }
+{ "user_id": "user_000053", "gender": "m", "age": "29", "country": "Germany", "registered": "Nov 30, 2005" }
+{ "user_id": "user_000054", "gender": "m", "age": "28", "country": "Brazil", "registered": "Nov 30, 2004" }
+{ "user_id": "user_000055", "gender": "m", "age": "21", "country": "Serbia", "registered": "Aug 6, 2006" }
+{ "user_id": "user_000056", "gender": "m", "age": "22", "country": "United States", "registered": "Jan 15, 2006" }
+{ "user_id": "user_000057", "gender": "m", "age": "17", "country": "United Kingdom", "registered": "Aug 27, 2006" }
+{ "user_id": "user_000058", "gender": "f", "age": "24", "country": "Poland", "registered": "Feb 28, 2006" }
+{ "user_id": "user_000059", "gender": "f", "age": "24", "country": "United States", "registered": "Sep 9, 2005" }
+{ "user_id": "user_000060", "gender": "f", "age": "22", "country": "United States", "registered": "Oct 11, 2005" }
+{ "user_id": "user_000063", "gender": "f", "age": "22", "country": "Poland", "registered": "Sep 25, 2005" }
+{ "user_id": "user_000064", "gender": "m", "age": "21", "country": "Finland", "registered": "Dec 19, 2005" }
+{ "user_id": "user_000065", "gender": "m", "age": "35", "country": "United States", "registered": "Oct 23, 2005" }
+{ "user_id": "user_000066", "gender": "f", "age": "20", "country": "United States", "registered": "May 9, 2006" }
+{ "user_id": "user_000067", "gender": "m", "age": "36", "country": "Canada", "registered": "Mar 8, 2005" }
+{ "user_id": "user_000069", "gender": "m", "age": "23", "country": "United States", "registered": "Jul 13, 2005" }
