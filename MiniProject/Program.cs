@@ -18,14 +18,14 @@ namespace MiniProject
             rs.Load("../../reviews-small.json", 0.9);
             Console.WriteLine("Loding time was " + Math.Round((DateTime.Now - ds).TotalSeconds, 0));
 
-            Console.WriteLine("\nTrain model...");
+            //Console.WriteLine("\nTrain model...");
             ds = DateTime.Now;
-            rs.TrainBaseModel(10);
-            Console.WriteLine("Training model was " + Math.Round((DateTime.Now - ds).TotalSeconds, 0));
+            //rs.TrainBaseModel(10);
+            //Console.WriteLine("Training model was " + Math.Round((DateTime.Now - ds).TotalSeconds, 0));
 
             List<string> lMethods = new List<string>();
             lMethods.Add("Pearson");
-            lMethods.Add("SVD");
+            //lMethods.Add("SVD");
             List<int> lLengths = new List<int>();
             lLengths.Add(10);
 

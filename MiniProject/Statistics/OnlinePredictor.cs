@@ -36,7 +36,7 @@ namespace MiniProject.Statistics
 
             if (Double.IsNaN(score)) score = TrainDataSet.getItemAverage(shearedItemID);
             if (Double.IsNaN(score)) return TrainDataSet.getItemAverage();
-            if (score > 5) return 5.0;
+            if (score > 1) return 1.0;
             return score;
         }
 

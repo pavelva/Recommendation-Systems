@@ -24,6 +24,7 @@ namespace hw2.Recommendation
             foreach(M sharedID in sharedIds)
             {
                 double prediction = Predictor.PredictRating(userID, sharedID);
+                Console.WriteLine(prediction); //REMOVE!!!!!!!!!!!!!!!!!!!!!!!!!
                 if (itemPredictions.Count < n)
                     itemPredictions.Add(sharedID, prediction);
                 else
