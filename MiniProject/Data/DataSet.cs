@@ -183,22 +183,22 @@ namespace MiniProject.Data
 
         private double CalculateUserAverage(T userId)
         {
-            double sum = 0.0;
-
-            foreach (I item in RatingMatrix[userId].Values)
-            {
-                sum += item.GetRating();
-            }
-
-            double average = sum / RatingMatrix[userId].Count;
-            UsersAverage.Add(userId, average);
-
-            return average;
+            return ((double) RatingMatrix[userId].Count) / UsersByItems.Count;
         }
 
         public List<M> getSharedItems(T userID1, T userID2)
         {
-            return RatingMatrix[userID1].Keys.Intersect(RatingMatrix[userID2].Keys).ToList();
+            //return RatingMatrix[userID1].Keys.Intersect(RatingMatrix[userID2].Keys).ToList();
+            List<M> sharedItems = new List<M>();
+
+            foreach (I item in RatingMatrix[userID1].Values)
+            {
+                if (RatingMatrix[userID2].ContainsKey(item.GetShearedItemID()))
+                {
+                    sharedItems.Add(item.GetShearedItemID());
+                }
+            }
+            return sharedItems;
         }
 
         public List<M> getJoinedItems(T userID1, T userID2)
@@ -223,43 +223,12 @@ namespace MiniProject.Data
 
         public double getItemAverage()
         {
-            if (RatingAverage != Double.MinValue)
-            {
-                return RatingAverage;
-            }
-
-            double average = 0.0;
-
-            foreach (I item in Items.Values)
-            {
-                average += item.GetRating();
-            }
-            RatingAverage = average / Items.Count;
-
-            return RatingAverage;
+            return UsersByItems.Keys.Select(si => getItemAverage(si)).Average();
         }
 
         public double getItemAverage(M shearedItemID)
         {
-            if (ItemsAverage.ContainsKey(shearedItemID))
-            {
-                return ItemsAverage[shearedItemID];
-            }
-
-            double reatingSum = 0.0;
-            int count = 0;
-
-            foreach (I item in Items.Values.Where(i => i.GetShearedItemID().Equals(shearedItemID)))
-            {
-                reatingSum += item.GetRating();
-                count++;
-            }
-
-            double average = reatingSum / count;
-
-            ItemsAverage.Add(shearedItemID, average);
-
-            return average;
+            return ((double) UsersByItems[shearedItemID].Count) / RatingMatrix.Count;
         }
 
         public Dictionary<M, Dictionary<T, I>> getUsersByItems()
