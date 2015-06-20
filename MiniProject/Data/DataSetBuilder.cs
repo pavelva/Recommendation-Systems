@@ -5,7 +5,7 @@ using System.Text;
 using System.IO;
 using Newtonsoft.Json;
 
-namespace Assignment1.Data
+namespace MiniProject.Data
 {
     class DataSetBuilder
     {
@@ -28,12 +28,43 @@ namespace Assignment1.Data
 
             while ((json = file.ReadLine()) != null)
             {
-                I item = JsonConvert.DeserializeObject<I>(json);
-                if (item.GetRating() < 3.0)
+                json = fixPavelError(json);
+                I item;
+                try
+                {
+                    item = JsonConvert.DeserializeObject<I>(json);
+                }
+                catch
+                {
+                    Console.WriteLine("Error | Parse: {0}", json);
                     continue;
+                }
                 newDataSet.AddItem(item);
             }
             return newDataSet;
+        }
+
+        private static string fixPavelError(string json)
+        {
+            int s = json.IndexOf("review_id\":") + 11;
+            int e = json.Length - 2;
+            string newJSON = json.Substring(0, s) + "\"";
+            newJSON += json.Substring(s, e - s) + "\"}";
+            return newJSON;
+        }
+
+        public static UserDataSet buildUserDataSet()
+        {
+            UserDataSet userDataSet = new UserDataSet();
+            StreamReader file = new StreamReader("users-small.json");
+            string json;
+
+            while ((json = file.ReadLine()) != null)
+            {
+                UserData user = JsonConvert.DeserializeObject<UserData>(json);
+                userDataSet.AddUser(user.getID(), user);
+            }
+            return userDataSet;
         }
     }
 }

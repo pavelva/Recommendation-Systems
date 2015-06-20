@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Assignment1.Utils
+namespace MiniProject.Utils
 {
     class RandomUniqeGen<T>
     {

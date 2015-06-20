@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Newtonsoft.Json;
 
-namespace Assignment1.Data
+namespace MiniProject.Data
 {
     class Review : IItem<string, string, string>
     {
@@ -12,17 +12,14 @@ namespace Assignment1.Data
         private string userId;
         [JsonProperty(PropertyName = "review_id")]
         private string reviewId;
-        [JsonProperty(PropertyName = "business_id")]
-        private string businessId;
-        [JsonProperty(PropertyName = "stars")]
-        private double stars;
+        [JsonProperty(PropertyName = "track_id")]
+        private string trackId;
 
-        public Review(string userId, string reviewId, string businessId, string stars)
+        public Review(string userId, string reviewId, string trackId)
         {
             this.userId = userId;
             this.reviewId = reviewId;
-            this.stars = Double.Parse(stars);
-            this.businessId = businessId;
+            this.trackId = trackId;
         }
 
         public string GetUserID()
@@ -37,12 +34,12 @@ namespace Assignment1.Data
 
         public string GetShearedItemID()
         {
-            return this.businessId;
+            return this.trackId;
         }
 
         public double GetRating()
         {
-            return this.stars;
+            return 1.0;
         }
     }
 }

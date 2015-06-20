@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Assignment1.Utils;
+using MiniProject.Utils;
 
-namespace Assignment1.Data
+namespace MiniProject.Data
 {
     //T - User ID Type.
     //K - Unique Item ID Type.

@@ -1,10 +1,10 @@
-﻿using Assignment1.Data;
+﻿using MiniProject.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Assignment1.Statistics
+namespace MiniProject.Statistics
 {
     class BaseModel<T, K, M, I> : OfflinePredictor<T, K, M, I> where I : IItem<T, K, M>
     {

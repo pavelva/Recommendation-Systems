@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Assignment1.Statistics;
-using Assignment1.Data;
+using MiniProject.Statistics;
+using MiniProject.Data;
 
 namespace hw2.Recommendation
 {

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Assignment1.Data;
+using MiniProject.Data;
 
-namespace Assignment1.Statistics
+namespace MiniProject.Statistics
 {
     class Pearson<T, K, M, I> : OnlinePredictor<T, K, M, I> where I : IItem<T, K, M>
     {
@@ -28,6 +28,7 @@ namespace Assignment1.Statistics
             double weight = sumMultUA / (Math.Sqrt(sumUMA) * Math.Sqrt(sumAMA));
             //ignore all the nagative weights.
             if (sumUMA == 0 || sumAMA == 0) return 0;
+            Console.WriteLine(weight);
             return (weight > 0) ? weight : 0;
             //return weight;
         }

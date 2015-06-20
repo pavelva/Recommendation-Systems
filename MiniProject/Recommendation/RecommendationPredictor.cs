@@ -1,5 +1,5 @@
-﻿using Assignment1.Data;
-using Assignment1.Statistics;
+﻿using MiniProject.Data;
+using MiniProject.Statistics;
 using System;
 using System.Collections.Generic;
 using System.Linq;

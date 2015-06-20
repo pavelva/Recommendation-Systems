@@ -50,6 +50,8 @@
     <Compile Include="Data\DataSetBuilder.cs" />
     <Compile Include="Data\IItem.cs" />
     <Compile Include="Data\Review.cs" />
+    <Compile Include="Data\UserData.cs" />
+    <Compile Include="Data\UserDataSet.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Recommendation\RecommendationBase.cs" />
@@ -57,6 +59,7 @@
     <Compile Include="Recommendation\RecommendationNNPredictor.cs" />
     <Compile Include="Recommendation\RecommendationPopularity.cs" />
     <Compile Include="Recommendation\RecommendationPredictor.cs" />
+    <Compile Include="RecommenderSystem.cs" />
     <Compile Include="Statistics\BaseModel.cs" />
     <Compile Include="Statistics\Cosine.cs" />
     <Compile Include="Statistics\OfflinePredictor.cs" />
@@ -68,9 +71,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="reviews-extra-small.tsv" />
-    <None Include="reviews-small.tsv" />
-    <None Include="users-small.tsv" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="lib\Newtonsoft.Json.dll" />

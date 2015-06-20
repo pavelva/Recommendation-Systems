@@ -1,4 +1,3 @@
-{ "user_id": "#id", "gender": "gender", "age": "age", "country": "country", "registered": "registered" }
 { "user_id": "user_000003", "gender": "m", "age": "22", "country": "United States", "registered": "Oct 30, 2005" }
 { "user_id": "user_000008", "gender": "m", "age": "23", "country": "Slovakia", "registered": "Sep 28, 2006" }
 { "user_id": "user_000009", "gender": "f", "age": "19", "country": "United States", "registered": "Jan 13, 2007" }

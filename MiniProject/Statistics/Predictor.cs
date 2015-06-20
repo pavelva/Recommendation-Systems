@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Assignment1.Data;
+using MiniProject.Data;
 
-namespace Assignment1.Statistics
+namespace MiniProject.Statistics
 {
     abstract class Predictor<T, K, M, I> where I : IItem<T, K, M>
     {
