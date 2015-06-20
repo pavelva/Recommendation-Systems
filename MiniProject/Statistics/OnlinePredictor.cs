@@ -34,8 +34,7 @@ namespace MiniProject.Statistics
             if (sumW == 0) return TrainDataSet.getItemAverage(shearedItemID);
             double score = TrainDataSet.GetUserAverage(activeUserID) + (sumWR / sumW);
 
-            if (Double.IsNaN(score)) score = TrainDataSet.getItemAverage(shearedItemID);
-            if (Double.IsNaN(score)) return TrainDataSet.getItemAverage();
+            if (Double.IsNaN(score)) return 0.5;
             if (score > 1) return 1.0;
             return score;
         }
