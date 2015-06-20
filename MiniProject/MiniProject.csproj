@@ -61,6 +61,8 @@
     <Compile Include="Recommendation\RecommendationPredictor.cs" />
     <Compile Include="RecommenderSystem.cs" />
     <Compile Include="Statistics\BaseModel.cs" />
+    <Compile Include="Statistics\BaseModelD.cs" />
+    <Compile Include="Statistics\BaseModelDO.cs" />
     <Compile Include="Statistics\Cosine.cs" />
     <Compile Include="Statistics\OfflinePredictor.cs" />
     <Compile Include="Statistics\OnlinePredictor.cs" />

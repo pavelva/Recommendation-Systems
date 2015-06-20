@@ -24,10 +24,12 @@ namespace MiniProject
             Console.WriteLine("Training model was " + Math.Round((DateTime.Now - ds).TotalSeconds, 0));
 
             List<string> lMethods = new List<string>();
-            lMethods.Add("Pearson");
-            lMethods.Add("PearsonD");
-            lMethods.Add("PearsonDO");
-            //lMethods.Add("SVD");
+            //lMethods.Add("Pearson");
+            //lMethods.Add("PearsonD");
+            //lMethods.Add("PearsonDO");
+            lMethods.Add("SVD");
+            lMethods.Add("SVDD");
+            lMethods.Add("SVDDO");
             List<int> lLengths = new List<int>();
             lLengths.Add(10);
 

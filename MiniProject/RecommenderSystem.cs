@@ -14,10 +14,12 @@ namespace MiniProject
         DataSet<string, string, string, Review> Test;
         DataSet<string, string, string, Review> Validation;
 
-        Predictor<string, string, string, Review> BaseModel;
         Predictor<string, string, string, Review> Person;
         Predictor<string, string, string, Review> PersonD;
         Predictor<string, string, string, Review> PersonDO;
+        Predictor<String, String, String, Review> BaseModel;
+        Predictor<String, String, String, Review> BaseModelD;
+        Predictor<String, String, String, Review> BaseModelDO;
         Predictor<string, string, string, Review> Cosine;
         Dictionary<String, RecommendationBase<string, string, string, Review>> RecommendationAlgo;
 
@@ -61,10 +63,15 @@ namespace MiniProject
 
         public void TrainBaseModel(int cFeatures)
         {
-            this.BaseModel = new BaseModel<string, string, string, Review>(Train, Validation, cFeatures);
+            this.BaseModel = new BaseModel<String, String, String, Review>(Train, Validation, cFeatures);
+            this.BaseModelD = new BaseModelD<String, String, String, Review>(Train, Validation, cFeatures);
+            this.BaseModelDO = new BaseModelDO<String, String, String, Review>(Train, Validation);
             this.BaseModel.TrainModel();
-            RecommendationAlgo.Add("SVD", new RecommendationPredictor<string, string, string, Review>(Train, BaseModel));
-            RecommendationAlgo.Add("NNSVD", new RecommendationNNPredictor<string, string, string, Review>(Train, BaseModel));
+            this.BaseModelD.TrainModel();
+            this.BaseModelDO.TrainModel();
+            RecommendationAlgo.Add("SVD", new RecommendationPredictor<String, String, String, Review>(Train, BaseModel));
+            RecommendationAlgo.Add("SVDD", new RecommendationPredictor<String, String, String, Review>(Train, BaseModelD));
+            RecommendationAlgo.Add("SVDDO", new RecommendationPredictor<String, String, String, Review>(Train, BaseModelDO));
         }
 
         public double GetRating(string sUID, string sIID)

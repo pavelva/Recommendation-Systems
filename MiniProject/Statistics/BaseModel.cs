@@ -84,7 +84,7 @@ namespace MiniProject.Statistics
                 qi = CalcAverage(Qi.Values, Qi.Count);
 
             double p = Mu + bu + bi + VMult(pu, qi);
-            return (p > 5) ? 5 : p;
+            return (p > 1) ? p : p;
         }
 
         private List<double> CalcAverage(IEnumerable<List<double>> vectors, int size)
