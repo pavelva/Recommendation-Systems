@@ -20,6 +20,11 @@ namespace MiniProject.Utils
 
         public T next()
         {
+            if (iterations == 0)
+            {
+                this.iterations = elements.Count;
+                return elements[0];
+            }
             int random = randomGen.Next(0, iterations);
             T result = elements[random];
             iterations--;

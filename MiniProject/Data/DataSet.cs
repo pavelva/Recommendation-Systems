@@ -119,17 +119,21 @@ namespace MiniProject.Data
         private I DeleteItem(T userID, M sharedItemID)
         {
             //if not exist return null and exit.
-            if (!RatingMatrix.ContainsKey(userID)) return default(I);
-            if (!RatingMatrix[userID].ContainsKey(sharedItemID)) return default(I);
+            if (!RatingMatrix.ContainsKey(userID))
+                throw new KeyNotFoundException("Can't remove item");
+            if (!RatingMatrix[userID].ContainsKey(sharedItemID))
+                throw new KeyNotFoundException("Can't remove item");
 
             //if not exist return null and exit.
-            if (!UsersByItems.ContainsKey(sharedItemID)) return default(I);
-            if (!UsersByItems[sharedItemID].ContainsKey(userID)) return default(I);
+            if (!UsersByItems.ContainsKey(sharedItemID))
+                throw new KeyNotFoundException("Can't remove item");
+            if (!UsersByItems[sharedItemID].ContainsKey(userID))
+                throw new KeyNotFoundException("Can't remove item");
 
             I toDelete = RatingMatrix[userID][sharedItemID];
 
-            //if not exist return null and exit. -- SHOULD THROW EXCEPTION!!! --
-            if (!Items.ContainsKey(toDelete.GetUniqueItemID())) return default(I);
+            if (!Items.ContainsKey(toDelete.GetUniqueItemID()))
+                throw new KeyNotFoundException("Can't remove item");
 
             Items.Remove(toDelete.GetUniqueItemID());
             RatingMatrix[userID].Remove(sharedItemID);
