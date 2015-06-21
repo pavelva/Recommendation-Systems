@@ -17,13 +17,12 @@ namespace hw2.Recommendation
             Dictionary<M, double> itemPredictions = new Dictionary<M, double>(n);
             Dictionary<M, Dictionary<T, I>> usersByItems = TrainDataSet.getUsersByItems();
 
-            List<M> sharedIds = usersByItems.Keys.Where(m => !TrainDataSet.UserContainsItem(userID, m)).GroupBy(x => x)
-                .Select(x => x.Key).ToList();
+            List<M> sharedIds = usersByItems.Keys.Where(m => !TrainDataSet.UserContainsItem(userID, m)).ToList();
 
             
             foreach(M sharedID in sharedIds)
             {
-                double prediction = Predictor.PredictRating(userID, sharedID);
+                /*double prediction = Predictor.PredictRating(userID, sharedID);
                 if (itemPredictions.Count < n)
                     itemPredictions.Add(sharedID, prediction);
                 else
@@ -38,11 +37,12 @@ namespace hw2.Recommendation
 
                     if (minPred >=4.0)
                         break;
-                }
+                }*/
+                double prediction = Predictor.PredictRating(userID, sharedID);
+                itemPredictions.Add(sharedID, prediction);
             }
 
-            List<M> recommendation = itemPredictions.Keys.OrderBy(m => -itemPredictions[m]).ToList();
-
+            List<M> recommendation = itemPredictions.Keys.OrderBy(m => -itemPredictions[m]).Take(n).ToList();
             return recommendation;
         }
     }

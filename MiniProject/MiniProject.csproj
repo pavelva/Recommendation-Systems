@@ -67,8 +67,11 @@
     <Compile Include="Statistics\OfflinePredictor.cs" />
     <Compile Include="Statistics\OnlinePredictor.cs" />
     <Compile Include="Statistics\Pearson.cs" />
-    <Compile Include="Statistics\PearsonD.cs" />
-    <Compile Include="Statistics\PearsonDO.cs" />
+    <Compile Include="Statistics\PearsonDNaive.cs" />
+    <Compile Include="Statistics\PearsonDFeatureVectorMultiply.cs" />
+    <Compile Include="Statistics\PearsonDFeatureVectorSum.cs" />
+    <Compile Include="Statistics\PearsonDONaive.cs" />
+    <Compile Include="Statistics\PearsonDOFeatureVector.cs" />
     <Compile Include="Statistics\Predictor.cs" />
     <Compile Include="Statistics\RandomPredictor.cs" />
     <Compile Include="Utils\RandomUniqeGen.cs" />

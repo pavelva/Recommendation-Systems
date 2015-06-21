@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace MiniProject.Statistics
 {
-    class PearsonDO<T, K, M, I> : PearsonD<T, K, M, I> where I : IItem<T, K, M>
+    class PearsonDONaive<T, K, M, I> : PearsonDNaive<T, K, M, I> where I : IItem<T, K, M>
     {
-        public PearsonDO(DataSet<T, K, M, I> dataSet) : base(dataSet) { }
+        public PearsonDONaive(DataSet<T, K, M, I> dataSet) : base(dataSet) { }
 
         protected override double CalculateWeight(T activeUserID, T userID)
         {

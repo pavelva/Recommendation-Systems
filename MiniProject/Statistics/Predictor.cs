@@ -30,6 +30,18 @@ namespace MiniProject.Statistics
             return rmse;
         }
 
+        public double VMult(List<double> v1, List<double> v2)
+        {
+            double multSum = 0.0;
+
+            for (int i = 0; i < v1.Count; i++)
+            {
+                multSum += v1[i] * v2[i];
+            }
+
+            return multSum;
+        }
+
         public abstract double PredictRating(T activeUserID, M shearedItemID);
         public abstract void TrainModel();
 

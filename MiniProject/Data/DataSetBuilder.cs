@@ -45,6 +45,9 @@ namespace MiniProject.Data
                 UserData user = JsonConvert.DeserializeObject<UserData>(json);
                 userDataSet.AddUser(user.getID(), user);
             }
+
+            userDataSet.initFeatureVectors();
+
             return userDataSet;
         }
     }

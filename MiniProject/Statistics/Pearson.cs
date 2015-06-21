@@ -14,7 +14,7 @@ namespace MiniProject.Statistics
         {
             double sumMultUA = 0.0, sumUMA = 0.0, sumAMA = 0.0;
             List<M> sharedItems = TrainDataSet.getSharedItems(activeUserID, userID);
-
+            //Console.WriteLine(activeUserID + " : " + userID);
             foreach (M itemID in sharedItems)
             {
                 double UMA = TrainDataSet.GetRating(userID, itemID) - TrainDataSet.GetUserAverage(userID);

@@ -18,6 +18,9 @@ namespace MiniProject.Data
         [JsonProperty(PropertyName = "user_id")]
         private String ID;
 
+        private List<double> featureVector;
+        private double vectorSize;
+
         public void SetAge(String age)
         {
             Age = Int32.Parse(age);
@@ -51,6 +54,33 @@ namespace MiniProject.Data
         public String getID()
         {
             return ID;
+        }
+
+        public List<double> getFeatureVector()
+        {
+            return featureVector;
+        }
+
+        public double getFeatureVectorSize()
+        {
+            return vectorSize;
+        }
+
+        internal void initFeatureVector(List<string> countrys)
+        {
+            this.featureVector = new List<double>();
+
+            for (int i = 0; i < (24 + 2 + countrys.Count); i++ )
+                featureVector.Add(0);
+
+            featureVector[this.Age / 5] = 1;
+            featureVector[23 + countrys.IndexOf(this.Country)] = 1;
+            if(this.Gender == "m")
+                featureVector[23 + countrys.Count + 1] = 1;
+            else
+                featureVector[23 + countrys.Count + 2] = 1;
+
+            vectorSize = Math.Sqrt(featureVector.Sum(f => Math.Pow(f, 2)));
         }
     }
 }
