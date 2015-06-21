@@ -79,8 +79,8 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="reviews-extra-small.json" />
-    <None Include="reviews-small.json" />
-    <None Include="users-small.json" />
+    <None Include="reviews.json" />
+    <None Include="users.json" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="lib\Newtonsoft.Json.dll" />

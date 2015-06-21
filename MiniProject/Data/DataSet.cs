@@ -40,33 +40,42 @@ namespace MiniProject.Data
 
         public void AddItem(I item)
         {
-            try
+            bool skip = false;
+
+            if (RatingMatrix.ContainsKey(item.GetUserID()) && !RatingMatrix[item.GetUserID()].ContainsKey(item.GetShearedItemID()))
+            {
+                RatingMatrix[item.GetUserID()].Add(item.GetShearedItemID(), item);
+            }
+            else if (!RatingMatrix.ContainsKey(item.GetUserID()))
+            {
+                RatingMatrix.Add(item.GetUserID(), new Dictionary<M, I>());
+                RatingMatrix[item.GetUserID()].Add(item.GetShearedItemID(), item);
+                UserCounter++;
+            }
+            else
+            {
+                skip = true;
+            }
+
+            if (UsersByItems.ContainsKey(item.GetShearedItemID()) && !UsersByItems[item.GetShearedItemID()].ContainsKey(item.GetUserID()))
+            {
+                UsersByItems[item.GetShearedItemID()].Add(item.GetUserID(), item);
+            }
+            else if (!UsersByItems.ContainsKey(item.GetShearedItemID()))
+            {
+                UsersByItems.Add(item.GetShearedItemID(), new Dictionary<T, I>());
+                UsersByItems[item.GetShearedItemID()].Add(item.GetUserID(), item);
+            }
+            else
+            {
+                skip = true;
+            }
+
+            if (!skip)
             {
                 Items.Add(item.GetUniqueItemID(), item);
                 ItemCounter++;
-
-                if (RatingMatrix.ContainsKey(item.GetUserID()))
-                {
-                    RatingMatrix[item.GetUserID()].Add(item.GetShearedItemID(), item);
-                }
-                else
-                {
-                    RatingMatrix.Add(item.GetUserID(), new Dictionary<M, I>());
-                    RatingMatrix[item.GetUserID()].Add(item.GetShearedItemID(), item);
-                    UserCounter++;
-                }
-
-                if (UsersByItems.ContainsKey(item.GetShearedItemID()))
-                {
-                    UsersByItems[item.GetShearedItemID()].Add(item.GetUserID(), item);
-                }
-                else
-                {
-                    UsersByItems.Add(item.GetShearedItemID(), new Dictionary<T, I>());
-                    UsersByItems[item.GetShearedItemID()].Add(item.GetUserID(), item);
-                }
             }
-            catch (ArgumentException) { }
         }
 
         public DataSet<T, K, M, I> splitDataSet(double splitSize)

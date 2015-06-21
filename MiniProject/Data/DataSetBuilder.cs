@@ -37,7 +37,7 @@ namespace MiniProject.Data
         public static UserDataSet buildUserDataSet()
         {
             UserDataSet userDataSet = new UserDataSet();
-            StreamReader file = new StreamReader("../../users-small.json");
+            StreamReader file = new StreamReader("../../users.json");
             string json;
 
             while ((json = file.ReadLine()) != null)

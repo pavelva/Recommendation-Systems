@@ -45,7 +45,7 @@ namespace MiniProject
             DataSet<string, string, string, Review>[] dataSets = DataSetBuilder.buildDataSets<string, string, string, Review>(sFileName, dTrainSetSize);
             this.Train = dataSets[0];
             this.Test = dataSets[1];
-            this.Validation = Train.splitDataSet(0.05);
+            this.Validation = Train.splitDataSet(0.01);
 
             this.Train.setUserDataSet(userDataSet);
             this.Test.setUserDataSet(userDataSet);
@@ -59,11 +59,6 @@ namespace MiniProject
             this.PearsonDOFeatureVector = new PearsonDOFeatureVector<string, string, string, Review>(Train);
             this.Cosine = new Cosine<string, string, string, Review>(Train);
 
-            
-
-            //RecommendationAlgo.Add("Popularity", new RecommendationPopularity<string, string, string, Review>(Train));
-            //RecommendationAlgo.Add("CP", new RecommendationCP<string, string, string, Review>(Train));
-            //RecommendationAlgo.Add("Cosine", new RecommendationPredictor<string, string, string, Review>(Train, Cosine));
             RecommendationAlgo.Add("Pearson", new RecommendationPredictor<string, string, string, Review>(Train, Person));
             Methods.Add("Pearson", new Pearson<string, string, string, Review>(Train));
             RecommendationAlgo.Add("PearsonDNaive", new RecommendationPredictor<string, string, string, Review>(Train, PersonDNaive));
@@ -76,8 +71,6 @@ namespace MiniProject
             Methods.Add("PearsonDFeatureVectorSum", new PearsonDFeatureVectorSum<string, string, string, Review>(Train));
             RecommendationAlgo.Add("PearsonDOFeatureVector", new RecommendationPredictor<string, string, string, Review>(Train, PearsonDOFeatureVector));
             Methods.Add("PearsonDOFeatureVector", new PearsonDOFeatureVector<string, string, string, Review>(Train));
-            //RecommendationAlgo.Add("NNCosine", new RecommendationNNPredictor<string, string, string, Review>(Train, Cosine));
-            //RecommendationAlgo.Add("NNPearson", new RecommendationNNPredictor<string, string, string, Review>(Train, Person));
         }
 
         public void TrainBaseModel(int cFeatures)
@@ -91,6 +84,9 @@ namespace MiniProject
             RecommendationAlgo.Add("SVD", new RecommendationPredictor<String, String, String, Review>(Train, BaseModel));
             RecommendationAlgo.Add("SVDD", new RecommendationPredictor<String, String, String, Review>(Train, BaseModelD));
             RecommendationAlgo.Add("SVDDO", new RecommendationPredictor<String, String, String, Review>(Train, BaseModelDO));
+            Methods.Add("SVD", this.BaseModel);
+            Methods.Add("SVDD", this.BaseModelD);
+            Methods.Add("SVDDO", this.BaseModelDO);
         }
 
         public double GetRating(string sUID, string sIID)

@@ -19,7 +19,7 @@ namespace MiniProject.Statistics
 
         public BaseModel(DataSet<T, K, M, I> train, DataSet<T, K, M, I> validation, int vSize) : base(train, validation)
         {
-            Mu = TrainDataSet.getItemAverage();
+            Mu = 0;// train.getItemAverage();
             Lambda = 0.05;
             Gamma = 0.05;
             VSize = vSize;
@@ -84,7 +84,7 @@ namespace MiniProject.Statistics
                 qi = CalcAverage(Qi.Values, Qi.Count);
 
             double p = Mu + bu + bi + VMult(pu, qi);
-            return (p > 1) ? p : p;
+            return (p > 1) ? 1 : p;
         }
 
         private List<double> CalcAverage(IEnumerable<List<double>> vectors, int size)
@@ -135,7 +135,8 @@ namespace MiniProject.Statistics
                 }
 
                 double currentRMSE = RMSE(ValidationDataSet);
-                if (currentRMSE > prevRMSE)
+                double d = prevRMSE - currentRMSE;
+                if (Math.Abs(d) < 0.01 || prevRMSE < currentRMSE)
                 {
                     Bu = CopyDic(tBu);
                     Bi = CopyDic(tBi);
