@@ -33,9 +33,9 @@ namespace MiniProject.Statistics
             double ageRep = userData.GetAge() / 100.0;
             double genderRep = userData.GetGender().Equals("m") ? -1.0 : 1.0;
 
-            pu[0] = countryCode;
-            pu[1] = ageRep;
-            pu[2] = genderRep;
+            pu[0] = countryCode / 100;
+            pu[1] = ageRep / 100;
+            pu[2] = genderRep / 100;
         }
 
         private double GetCountryCode(string country)
